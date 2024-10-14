@@ -19,9 +19,10 @@ from utils import get_path_agent_ckpt, prompt_atari_game
 
 OmegaConf.register_new_resolver("eval", eval)
 
-
+import os
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 def download(filename: str) -> Path:
-    path = hf_hub_download(repo_id="eloialonso/diamond", filename=filename)
+    path = "D:/AI_project/diamond/src/diamond/" + filename
     return Path(path)
 
 
